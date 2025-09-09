@@ -81,3 +81,34 @@
       Get Involved
     </button>
   </section>
+
+      <!-- Shop Section -->
+  <section class="py-12 max-w-7xl mx-auto px-6">
+    <h2 class="text-2xl text-black font-semibold text-center mb-8">Choose Your Trees</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+      <!-- Categories Sidebar -->
+      <aside>
+        <h3 class="text-black font-semibold mb-4">Categories</h3>
+        <ul class="menu bg-base-100 bg-white w-full rounded-lg shadow space-y-1" id="categories">
+          <li><a class="active">All Trees</a></li>
+        </ul>
+      </aside>
+
+      <!-- Products Grid -->
+      <div class="md:col-span-2 lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="plants-container">
+        <!-- Dynamic Products -->
+      </div>
+
+      <!-- Cart -->
+      <aside class="bg-white rounded-lg shadow p-5 h-fit" id="cart">
+        <h3 class="text-black font-semibold mb-4">Your Cart</h3>
+        <div id="cart-items" class="space-y-2"></div>
+        <hr class="my-3" />
+        <div class="flex justify-between font-bold">
+          <span class="text-black">Total:</span>
+          <span class="text-black" id="total-price">৳0</span>
+        </div>
+      </aside>
+    </div>
+  </section>
