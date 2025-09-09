@@ -139,3 +139,8 @@ function renderCart() {
   });
   totalPriceEl.textContent = `৳${total}`;
 }
+
+// Initialize
+loadCategories();
+loadAllPlants();
+renderCart();
