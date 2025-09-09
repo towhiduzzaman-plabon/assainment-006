@@ -78,3 +78,29 @@ async function loadPlantsByCategory(id) {
     plantsContainer.innerHTML = "<p class='text-center text-red-500'>No products found for this category.</p>";
   }
 }
+
+
+//Render Plants
+
+function renderPlants(plants) {
+  plantsContainer.innerHTML = "";
+  plants.forEach(plant => {
+    const card = document.createElement("div");
+    card.className = "card bg-white shadow-lg text-black rounded-xl p-6 h-full flex flex-col justify-between";
+
+    card.innerHTML = `
+      <figure class="bg-gray-100 h-20 w-36 mb-8 flex items-center justify-center rounded-md overflow-hidden">
+        <img src="${plant.image}" alt="${plant.name}" class="h-full w-36 object-cover" />
+      </figure>
+      <h3 class="font-semibold mb-1">${plant.name}</h3>
+      <p class="text-sm text-gray-600 mb-3">${plant.description.substring(0, 70)}...</p>
+      <div class="flex justify-between items-center mb-4">
+        <span class="bg-green-100 text-green-700 text-sm font-semibold px-3 py-1 rounded-full">${plant.category}</span>
+        <span class="font-semibold text-gray-800">৳${plant.price}</span>
+      </div>
+      <button class="btn bg-green-700 text-white w-full rounded-full hover:bg-green-800">Add to Cart</button>
+    `;
+    card.querySelector("button").onclick = () => addToCart(plant);
+    plantsContainer.appendChild(card);
+  });
+}
