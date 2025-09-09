@@ -49,3 +49,32 @@ async function loadCategories() {
     categoriesEl.innerHTML = "<li><a>No Categories Found</a></li>";
   }
 }
+
+
+// Load All Plants (Default)
+async function loadAllPlants() {
+  showLoading();
+  try {
+    const res = await fetch(`${API_BASE}/plants`);
+    const data = await res.json();
+    const plants = data.plants || data.data;
+    renderPlants(plants);
+  } catch (err) {
+    console.error("Error loading plants:", err);
+    plantsContainer.innerHTML = "<p class='text-center text-red-500'>Failed to load plants.</p>";
+  }
+}
+
+// Load Plants by Category
+async function loadPlantsByCategory(id) {
+  showLoading();
+  try {
+    const res = await fetch(`${API_BASE}/category/${id}`);
+    const data = await res.json();
+    const plants = data.plants || data.data;
+    renderPlants(plants);
+  } catch (err) {
+    console.error("Error loading plants by category:", err);
+    plantsContainer.innerHTML = "<p class='text-center text-red-500'>No products found for this category.</p>";
+  }
+}
