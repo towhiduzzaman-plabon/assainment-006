@@ -104,3 +104,38 @@ function renderPlants(plants) {
     plantsContainer.appendChild(card);
   });
 }
+
+
+// Add to Cart
+function addToCart(plant) {
+  cart.push(plant);
+  renderCart();
+}
+
+// Remove from Cart
+function removeFromCart(index) {
+  cart.splice(index, 1);
+  renderCart();
+}
+
+//  Render Cart
+function renderCart() {
+  cartItemsEl.innerHTML = "";
+  let total = 0;
+  cart.forEach((item, index) => {
+    total += item.price;
+    const row = document.createElement("div");
+    row.className = "flex justify-between items-center";
+   row.innerHTML = `
+  <span class="item-name">${item.name}</span>
+  <div class="flex items-center gap-2">
+    <span class="item-price">৳${item.price}</span>
+    <button class="text-red-600 hover:underline">x</button>
+  </div>
+`;
+
+    row.querySelector("button").onclick = () => removeFromCart(index);
+    cartItemsEl.appendChild(row);
+  });
+  totalPriceEl.textContent = `৳${total}`;
+}
