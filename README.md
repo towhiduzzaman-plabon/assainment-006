@@ -43,7 +43,7 @@
 
 ## 4) How does destructuring work?
 
-A simple way to take values from objects or arrays into variables.
+A simple way to take values from objects or arrays into variables. 
 Example:
 const person = { name: "Alice", age: 25 };
 const { name, age } = person;
