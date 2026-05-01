@@ -9,7 +9,7 @@
 - **let**
   - New way to declare variables.
   - Can change the value, but cannot declare it again in the same block.
-  - Works only inside the block where it is written.
+  - Works only inside the block where it is written.   
 
 - **const**
   - Used for values that should not change.
