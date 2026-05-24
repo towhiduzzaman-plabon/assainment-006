@@ -22,7 +22,7 @@ async function loadCategories() {
     const res = await fetch(`${API_BASE}/categories`);
     const data = await res.json();
     
-    // Some APIs return categories inside 'data'
+    // Some APIs  return categories inside 'data'
     const categories = data.categories || data.data;
 
     categoriesEl.innerHTML = "";
